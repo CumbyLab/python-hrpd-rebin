@@ -234,7 +234,7 @@ class MainWindow(QMainWindow, Ui_mythen_gui):
         progress.setWindowModality(Qt.WindowModal)
         progress.forceShow()
         progress.setValue(0)
-        from mythen import load_all, process_and_save, report_processing
+        from hrpdrebin.mythen import load_all, process_and_save, report_processing
         data, files = load_all(self.scans, None, None, progress=progress)
         summed = True
         rebinned = True
@@ -261,3 +261,6 @@ def main(args=None):
     frame = MainWindow()
     frame.show()
     app.exec_()
+
+if __name__ == '__main__':
+    main()
