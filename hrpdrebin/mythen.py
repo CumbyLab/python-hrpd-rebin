@@ -139,7 +139,7 @@ def parse_metadata(f):
                 if match: mythen_files.append(path.join(dir, match.group(0)))
 
     if not mythen_files: 
-        print 'WARNING: The file %s contains no names of .dat files' % f
+        print('WARNING: The file %s contains no names of .dat files' % f)
     return mythen_files
 
 def parse_metadata_and_load(files):
@@ -154,7 +154,7 @@ def preserve_filesystem(dpath, output):
         try:
             di = spath.index('data')
         except ValueError:
-            print 'Cannot save the data into a directory data/year/visit/processed/ if input is not under data/year/visit/'
+            print('Cannot save the data into a directory data/year/visit/processed/ if input is not under data/year/visit/')
             raise
         br = di + 3
         dir, file = '/'.join(spath[:br]), '/'.join(spath[br:])

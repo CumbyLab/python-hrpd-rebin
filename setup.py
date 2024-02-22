@@ -1,15 +1,17 @@
 from setuptools import setup, find_packages
 
+print(find_packages())
+
 setup(
     name="hrpdrebin",
-    version="1.1",
+    version="1.2",
     description='High-resolution powder diffraction rebin',
     author="Peter Chang",
     author_email="scientificsoftware@diamond.ac.uk",
     classifiers=[
         "License :: OSI Approved :: Apache Software License",
         "Natural Language :: English",
-        "Programming Language :: Python :: 2.7",
+        "Programming Language :: Python :: 3.6",
     ],
     packages=find_packages(),
     install_requires=['numpy>=1.6', 'scisoftpy>=2.17'],

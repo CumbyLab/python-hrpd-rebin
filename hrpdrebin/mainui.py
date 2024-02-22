@@ -3,10 +3,10 @@ import sys
 GUI for rebinner
 '''
 try:
-    import sip
-    sip.setapi('QString', 2)
-    from PyQt4.QtGui import QMainWindow, QApplication, QFileDialog, QStringListModel, QDialog, QProgressDialog, QErrorMessage
-    from PyQt4.QtCore import Qt
+    #import sip
+    #sip.setapi('QString', 2)
+    from PyQt5.QtWidgets import QMainWindow, QApplication, QFileDialog, QDialog, QProgressDialog, QErrorMessage
+    from PyQt5.QtCore import Qt, QStringListModel
 except:
     try:
         from PySide.QtGui import QMainWindow, QApplication, QFileDialog, QStringListModel, QDialog, QProgressDialog, QErrorMessage
@@ -15,11 +15,12 @@ except:
         print("Error: At least one of PySide>=1.2 or PyQt4>=4 is required.\nExiting")
         sys.exit()
 
-from mythenui import Ui_mythen_gui
+from hrpdrebin.mythenui import Ui_mythen_gui
+#from mythenui import Ui_mythen_gui
 
-from rangeui import Ui_range_dialog
+from hrpdrebin.rangeui import Ui_range_dialog
 
-import mythen
+from hrpdrebin import mythen
 import sys
 
 # taken from spyderlib's qt/compat.py
