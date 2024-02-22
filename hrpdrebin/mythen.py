@@ -27,7 +27,7 @@ def rebin(mashed, angle, delta, summed, files, progress=None, weights=True):
     aend = (_round_remainder(amax - angle, delta) + 1) * delta + angle
     from math import ceil
     alen = int(ceil((aend - abeg)/delta))
-    result = np.zeros((4, alen), dtype=np.float)
+    result = np.zeros((4, alen), dtype=float)
     result[0] = abeg + np.arange(alen) * delta
     cresult = result[1]
     eresult = result[2]
@@ -51,10 +51,10 @@ def rebin(mashed, angle, delta, summed, files, progress=None, weights=True):
             e = e[min_index:]
 
         # need to linearly interpolate?
-        inds = _round_remainder(a - abeg, delta).astype(np.int)
+        inds = _round_remainder(a - abeg, delta).astype(int)
         nlen = inds.ptp() + 1
         nbeg = inds.min()
-        nresult = np.zeros((4, nlen), dtype=np.float)
+        nresult = np.zeros((4, nlen), dtype=float)
         nresult[0] = abeg + (nbeg + np.arange(nlen)) * delta
         ncresult = nresult[1]
         neresult = nresult[2]
